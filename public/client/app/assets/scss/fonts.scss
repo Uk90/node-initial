@@ -1,0 +1,27 @@
+@charset 'UTF-8';
+$f-DroidSans: 'DroidSans';
+$f-avenir: 'Avenir';
+$f-Roboto: 'Roboto';
+@mixin font-family($font) {
+    font-family: $font;
+}
+$f-DroidSans-url-1: url('../fonts/ttf2woff/DroidSans.woff');
+$f-avenir-url-1: url('../fonts/ttf2woff/AvenirLTStd-Roman.otf');
+$f-Roboto-url-1: url('../fonts/ttf2woff/Roboto-Regular.woff');
+@mixin font-face($font, $url1) {
+    font-family: $font;
+    src: $url1 format('woff');
+}
+@font-face {
+     @include font-face($f-DroidSans, $f-DroidSans-url-1);
+}
+@font-face {
+     @include font-face($f-avenir, $f-avenir-url-1);
+}
+@font-face {
+     @include font-face($f-Roboto, $f-Roboto-url-1);
+}
+@font-face {
+    font-family: 'Material Icons';
+    src: local('Material Icons'), local('MaterialIcons-Regular'), url('../fonts/material_icons.woff2') format('woff2');
+}

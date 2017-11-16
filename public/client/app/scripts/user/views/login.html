@@ -1,0 +1,55 @@
+<div flex layout="row" class="width-height-100  bg-login-img">
+    <md-content class="md-padding bg-initial landing-md-content" flex layout="row" layout-sm="row" layout-xs="column">
+        <div flex="50" layout-align="end" flex-xs="30" flex-md="50" flex-sm="35" flex-gt-xs="40" layout="column" layout-sm="row" layout-xs="row" class="margin-auto">
+            <div>
+                <div class="fzbl-text">
+                    Manique</div>
+                <div class="fzbl-slogan">
+                  Let Start Node
+                </div>
+            </div>
+        </div>
+        <div flex="30" layout-align="start" flex-xs="60" flex-md="40" flex-sm="35" flex-gt-xs="40" layout="column" class="margin-auto">
+            <md-card class="login-panel">
+                <form id="login_form" ng-submit="userCtrl.login(loginForm);" name="loginForm" class="login-form" novalidate autocomplete="false">
+                    <div flex>
+                        <md-input-container class="width-100 custom-md-input">
+                            <input autocomplete="false" required name="name" class="no-border-width input-font-color" ng-model="userCtrl.project.projectName"   type="name" placeholder="Project Name" autofocus>
+                            <div ng-messages="loginForm.name.$error" ng-if="loginForm.name.$touched" class="input-messages">
+                                <div ng-message="required" ng-show="loginForm.name.$error.required">Please enter Project Name.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex="100">
+                        <md-input-container class="width-100 custom-md-input">
+                            <input  required name="projectCode" class="input-font-color" ng-model="userCtrl.project.projectCode" type="text" placeholder="Project Code" autofocus>
+                            <div ng-messages="loginForm.projectCode.$error" class="input-messages">
+                                <div ng-message="required" ng-show="loginForm.projectCode.$error.required">Please enter your Project Code.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+                    <div flex layout="row">
+
+                        <div flex="50" layout="column">
+                            <div flex="100">
+                                <md-button ng-disabled="loginForm.$invalid" class="md-primary custom-btn-submit text-capitalize login-btn" type="submit" style="width:100%">Add Project</md-button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+
+                </md-button>
+            </md-card>
+            <div flex layout-align="center" layout="row" class="new-user m-10">
+                <div flex="50" layout="column" class="m-t-15 color-white new-user-text">
+                    Add a new user?
+                </div>
+                <div flex="50" layout="column">
+                    <md-button class="md-primary custom-btn register-btn text-capitalize" type="submit" ng-click="userCtrl.redirectToRegister();">Add Employee</md-button>
+                </div>
+            </div>
+        </div>
+
+    </md-content>
+</div>

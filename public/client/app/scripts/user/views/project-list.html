@@ -1,0 +1,42 @@
+    <md-whiteframe class="bg-light-white custom-whiteframe" layout="row" layout-wrap layout-align="center center" flex >
+        <div layout="row" flex-xs="50" flex-gt-xs="50">
+            <div class="breadcrumb-icon"></div>
+            <div class="header-title">Project Lists</div>
+        </div>
+        <div flex layout-fill></div>
+        <div flex-xs="50" flex-gt-xs="50">
+        </div>
+    </md-whiteframe>
+
+    <div layout="row" layout-align="start" layout-padding layout-wrap ng-init="userCtrl.getProjectList()">
+        <md-content flex layout="column" class="full-vers-cont p-40">
+            <md-card class="card-bg-br" >
+              <md-card-title flex layout="row" class="secondary-title">
+              </md-card-title>
+              <md-card-content>
+                  <table class="cost-code-table width-perc-100" cellspacing="0">
+                      <thead>
+                          <tr>
+                             <th class="default-label align-left ">Project Name</th>
+                              <th class="default-label align-left ">Project Code</th>
+                              <th class="default-label align-left">View</th>
+                          </tr>
+                      </thead>
+                      <tbody ng-repeat="project in userCtrl.projectList ">
+                        <td class="align-left" ng-init='isEdit=true'>
+                            <md-input-container class="fzbl-input width-perc-50">
+                                <input ng-disabled='isEdit' class="input-font-color" ng-model="project.projectName" />
+                            </md-input-container>
+                        </td>
+                        <td class="align-left">
+                            <md-input-container class="fzbl-input width-perc-50">
+                                <input ng-disabled='isEdit' class="input-font-color" ng-model="project.projectCode" />
+                            </md-input-container>
+                        </td>
+                        <td class="align-center">
+                        <md-button class="md-primary custom-btn-submit text-capitalize login-btn" type="submit" style="width: 100%;">View</md-button>
+                      </tbody>
+                    </md-card-content>
+                  </md-card>
+                </md-content>
+              </div>

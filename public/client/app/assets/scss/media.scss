@@ -1,0 +1,119 @@
+@media (max-width : 768px) {
+    .header-title{
+        font-size: 16px !important;
+    }
+    .blue-btn {
+        font-size: 11px !important;
+    }
+    .md-button {
+        min-width:40px !important;
+        padding:0 10px !important;
+        margin:0px 2px !important;
+    }
+    .xs-icons {
+        margin-left:-2px;
+        color:#073d6d !important;
+    }
+    .xs-menu-icons {
+        margin-left:1px !important;
+    }
+    .project-title-text {
+        font-size: 16px;
+    }
+    .project-location-text {
+        font-size: 14px;
+    }
+    .project-cost-text{
+        font-size: 12px;
+    }
+    .left-padding-xs-20{
+
+    }
+    .custom-btn-submit {
+        width: 70%;
+    }
+    .mobile.custom-whiteframe {
+      padding: 10px 5px !important;
+    }
+    .custom-whiteframe {
+      padding: 15px 20px !important;
+    }
+}
+@media (min-width : 769px) and (max-width : 960px) {
+    .header-title{
+        font-size: 18px !important;
+    }
+    .blue-btn {
+        font-size: 13px !important;
+    }
+    .md-button {
+        min-width:0 !important;
+        padding:0 10px !important;
+        margin:0px 2px !important;
+    }
+    .sortby-cont{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .project-title-text {
+        font-size: 16px;
+    }
+    .project-location-text {
+        font-size: 14px;
+    }
+    .project-cost-text{
+        font-size: 12px;
+    }
+}
+@media (min-width : 769px) and (max-width : 960px) {
+    .header-title{
+        font-size: 18px !important;
+    }
+    .blue-btn {
+        font-size: 13px !important;
+    }
+    .md-button {
+        min-width:0 !important;
+        padding:0 10px !important;
+        margin:0px 2px !important;
+    }
+    .sortby-cont{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .project-title-text {
+        font-size: 16px;
+    }
+    .project-location-text {
+        font-size: 14px;
+    }
+    .project-cost-text{
+        font-size: 12px;
+    }
+}
+@media (min-width : 961px) and (max-width : 1024px) {
+    .header-title{
+        font-size: 24px !important;
+    }
+    .blue-btn {
+        font-size: 16px !important;
+    }
+    .md-button {
+        min-width:0 !important;
+        padding:0 10px !important;
+        margin:0px 2px !important;
+    }
+    .sortby-cont{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .project-title-text {
+        font-size: 18px;
+    }
+    .project-location-text {
+        font-size: 16px;
+    }
+    .project-cost-text{
+        font-size: 14px;
+    }
+}

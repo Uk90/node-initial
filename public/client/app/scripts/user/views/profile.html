@@ -1,0 +1,132 @@
+<form id="profile_form" name="profileForm" ng-submit="profileCtrl.saveProfile(profileForm)" ng-init="profileCtrl.getUserProfile()" novalidate>
+    <md-whiteframe class="page-title-sec" layout="row" layout-wrap layout-align="center center" flex>
+        <div flex-xs="30" flex-gt-xs="45">
+            <span class="header-title">My Profile</span>
+        </div>
+        <div flex-xs="70" flex-gt-xs="45">
+            <div layout="row" layout-align="end">
+                <md-button class="md-primary blue-btn input-font-color text-capitalize" ng-click="changePassword();">
+                    Change Credential</md-button>
+                <md-button class="md-primary blue-btn input-font-color text-capitalize" ng-click="saveProfile();">
+                    Save</md-button>
+            </div>
+        </div>
+    </md-whiteframe>
+    <div layout="row" layout-align="center" layout-padding layout-wrap class="container-bg">
+        <md-card class="border-radius-8 card-br" flex-xs="90" flex-gt-xs="35" layout-padding>
+            <div class="m-25">
+                <div flex>
+                    <h5>General Information</h5>
+                </div>
+                <div flex>
+                    <md-input-container class="width-100 custom-md-input">
+                        <input required name="firstName" class="no-border-width input-font-color" ng-model="profileCtrl.user.firstName" type="text" placeholder="First name">
+                        <div ng-messages="profileForm.firstName.$error">
+                            <div ng-message="required" ng-show="profileForm.firstName.$error.required">Please enter your First Name.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container class="width-100 custom-md-input">
+                        <input required name="lastName" class="no-border-width input-font-color" ng-model="profileCtrl.user.lastName" type="text" placeholder="Last name">
+                        <div ng-messages="profileForm.lastName.$error">
+                            <div ng-message="required" ng-show="profileForm.lastName.$error.required">Please enter your Last Name.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container class="width-100 custom-md-input">
+                        <input required name="company" class="no-border-width input-font-color" ng-model="profileCtrl.user.company" type="text" placeholder="Company">
+                        <div ng-messages="profileForm.company.$error">
+                            <div ng-message="required" ng-show="profileForm.company.$error.required">Please enter your Company Name.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container class="width-100 custom-md-input">
+                        <input required name="phone" class="no-border-width input-font-color" ng-model="profileCtrl.user.phone" placeholder="Phone" ng-pattern="/^[0-9]{10}$/">
+                        <div ng-messages="profileForm.phone.$error">
+                            <div ng-message="required" ng-show="profileForm.phone.$error.required">Please enter your Phone Number.</div>
+                            <div ng-message="pattern" ng-show="profileForm.phone.$error.pattern">Please enter a valid phone number.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container class="width-100 custom-md-input">
+                        <input required name="email" class="no-border-width input-font-color" ng-model="profileCtrl.user.email" placeholder="Email Address" minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" disabled>
+                        <div ng-messages="profileForm.email.$error">
+                            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                Your email must be between 10 and 100 characters long and look like an e-mail address.
+                            </div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-card>
+        <div hide show-gt-xs flex="5"></div>
+        <md-card class="border-radius-8 card-br" flex-xs="90" flex-gt-xs="35" layout-padding>
+            <div class="m-25">
+                <div flex>
+                    <h5>Billing Information</h5>
+                </div>
+                <div flex>
+                    <md-input-container class="width-100 custom-md-input">
+                        <input required name="address1" class="no-border-width input-font-color" ng-model="profileCtrl.user.address1" type="text" placeholder="Address Line1">
+                        <div ng-messages="profileForm.address1.$error">
+                            <div ng-message="required" ng-show="profileForm.address1.$error.required">Please enter the Billing Addres Line1.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container class="width-100 custom-md-input">
+                        <input required name="address2" class="no-border-width input-font-color" ng-model="profileCtrl.user.address2" type="text" placeholder="Address Line2">
+                        <div ng-messages="profileForm.address2.$error">
+                            <div ng-message="required" ng-show="profileForm.address2.$error.required">Please enter the Billing Addres Line2.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container class="width-100 custom-md-input">
+                        <input required name="city" class="no-border-width input-font-color" ng-model="profileCtrl.user.city" type="text" placeholder="City">
+                        <div ng-messages="profileForm.city.$error">
+                            <div ng-message="required" ng-show="profileForm.city.$error.required">Please enter the Billing City.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex layout="row">
+                    <md-input-container class="width-100 custom-md-input" flex="50">
+                        <label>State</label>
+                        <md-select name="state" ng-model="profileCtrl.user.state" class="no-border-width input-font-color" required>
+                            <md-option ng-repeat="state in states" value="{{$index+1}}">
+                                {{state}}
+                            </md-option>
+                        </md-select>
+                        <div ng-messages="profileForm.state.$error">
+                            <div ng-message="required" ng-show="profileForm.state.$error.required">Please select the Billing State.</div>
+                        </div>
+                    </md-input-container>
+                    <div flex="5"></div>
+                    <md-input-container flex="50" class="width-100 custom-md-input">
+                        <input required name="postalCode" class="no-border-width input-font-color" ng-model="profileCtrl.user.postalCode" type="text" placeholder="Postal Code" ng-pattern="/^[0-9]{6}$/" md-maxlength="6">
+                        <div ng-messages="profileForm.postalCode.$error">
+                            <div ng-message="required" ng-show="profileForm.postalCode.$error.required">Please enter the Billing Postal Code.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+                <div flex>
+                    <md-input-container class="width-100 custom-md-input">
+                        <label>Country</label>
+                        <md-select name="country" ng-model="profileCtrl.user.country" class="no-border-width input-font-color" required>
+                            <md-option ng-repeat="country in countries" value="{{$index+1}}">
+                                {{country}}
+                            </md-option>
+                        </md-select>
+                        <div ng-messages="profileForm.country.$error">
+                            <div ng-message="required" ng-show="profileForm.country.$error.required">Please select the Billing Country.</div>
+                        </div>
+                    </md-input-container>
+                </div>
+            </div>
+        </md-card>
+    </div>
+</form>

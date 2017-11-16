@@ -1,0 +1,62 @@
+    <md-whiteframe class="bg-light-white custom-whiteframe" layout="row" layout-wrap layout-align="center center" flex >
+        <div layout="row" flex-xs="50" flex-gt-xs="50">
+            <div class="breadcrumb-icon"></div>
+            <div class="header-title">Employee Lists</div>
+        </div>
+        <div flex layout-fill></div>
+        <div flex-xs="50" flex-gt-xs="50">
+        </div>
+    </md-whiteframe>
+
+    <div layout="row" layout-align="start" layout-padding layout-wrap ng-init="userCtrl.getEmpList()">
+        <md-content flex layout="column" class="full-vers-cont p-40">
+            <md-card class="card-bg-br" >
+              <md-card-title flex layout="row" class="secondary-title">
+              </md-card-title>
+              <md-card-content>
+                  <table class="cost-code-table width-perc-100" cellspacing="0">
+                      <thead>
+                          <tr>
+                             <th class="default-label align-left ">First Name</th>
+                              <th class="default-label align-left ">Last Name</th>
+                              <th class="default-label align-left">Email</th>
+                              <th class="default-label align-left">Employee Id</th>
+                              <th class="default-label align-center">Edit</th>
+                              <th class="default-label align-center">Delete</th>
+                          </tr>
+                      </thead>
+                      <tbody ng-repeat="empList in userCtrl.userList ">
+                        <td class="align-left" ng-init='isEdit=true'>
+                            <md-input-container class="fzbl-input width-perc-50">
+                                <input ng-disabled='isEdit' class="input-font-color" ng-model="empList.firstname" />
+                            </md-input-container>
+                        </td>
+                        <td class="align-left">
+                            <md-input-container class="fzbl-input width-perc-50">
+                                <input ng-disabled='isEdit' class="input-font-color" ng-model="empList.lastname" />
+                            </md-input-container>
+                        </td>
+                        <td class="align-left">
+                            <md-input-container class="fzbl-input width-perc-80">
+                                <input ng-disabled='true' class="input-font-color" ng-model="empList.email" />
+                            </md-input-container>
+                        </td>
+                        <td class="align-left">
+                            <md-input-container class="fzbl-input width-perc-50">
+                                <input ng-disabled='isEdit' class="input-font-color" ng-model="empList.employeeId" />
+                            </md-input-container>
+                        </td>
+
+                        <td class="align-center">
+                          <md-icon ng-hide="isEdit == false" ng-click="isEdit=false" class="material-icons blue-icon-color">create</md-icon>
+                          <md-icon ng-show="isEdit == false" ng-click="isEdit=true; userCtrl.updateEmp(empList)" class="material-icons green-icon-color" >done</md-icon>
+                          <md-icon ng-show="isEdit == false" ng-click="isEdit=true" class="material-icons red-icon-color" >clear</md-icon>
+                        </td>
+
+                        <td class="align-center">
+                          <md-icon class="material-icons red-icon-color" ng-click="userCtrl.deleteEmp($index,empList)" >clear</md-icon></td>
+                      </tbody>
+                    </md-card-content>
+                  </md-card>
+                </md-content>
+              </div>

@@ -1,0 +1,50 @@
+<!-- <div ng-include="'../app/scripts/landing/views/header.html'"></div> -->
+<div layout-gt-xs="row"  layout-xs="column" layout-wrap class="main-content horizontal-overflow-hidden fill-blank-space-height" ng-controller="MenuController as menuCtrl" >
+    <div layout="column" hide-xs>
+        <div flex class="logo-cont">
+          <a href="#"><img src="assets/images/logo.png" alt="Logo"/></a>
+        </div>
+        <div layout-align="end center" layout-fill id="sideMenu" ng-include="'../app/scripts/menu/views/side-menu.html'" adjust-height></div>
+    </div>
+    <!-- <div ng-if="screenSize >= 600" ui-view flex layout-fill class="container-view fill-blank-space-height" ng-click="menuCtrl.closeToggle();"></div> -->
+<!-- </div>
+
+<div layout="column" class="mobile-header" hide-gt-xs ng-controller="MenuController as menuCtrl"> -->
+  <div layout="row" class="mobile-header bg-white-color"  hide-gt-xs>
+    <div flex="100" layout="row">
+      <md-toolbar class="mobile custom-whiteframe page-title-sec bg-light-white" hide-gt-xs>
+        <div class="md-toolbar-tools">
+          <md-button class="md-icon-button" aria-label="Side Panel" ng-click="userCtrl.openSideNavPanel()">
+            <md-icon class="md-default-theme" class="material-icons">menu</md-icon>
+          </md-button>
+          <div flex="20" hide-gt-xs class="logo-cont">
+            <a href="#"><img src="assets/images/logo.png" alt="Logo" width="50" height="24"/></a>
+          </div>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Search" ng-click="userCtrl.redirectToHome()">
+            <md-icon class="material-icons input-font-color">home</md-icon>
+          </md-button>
+        </div>
+      </md-toolbar>
+    </div>
+  </div>
+  <div   ui-view  flex layout-fill class="container-view fill-blank-space-height" ng-click="menuCtrl.closeToggle();"></div>
+  <md-sidenav class="md-sidenav-left mobile-sidemenu md-whiteframe-z2"  md-component-id="left"   hide-gt-xs>
+   <md-toolbar layout="row">
+    <div class="md-toolbar-tools bg-white-color">
+     <div flex class="logo-cont">
+        <a href="#"><img src="assets/images/logo.png" class="sidemenu-logo" alt="Logo"/></a>
+      </div>
+     <span flex></span>
+     <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="userCtrl.closeSideNavPanel()">
+       <md-icon class="md-default-theme" class="material-icons" style="color: gray !important;
+  font-size: 20px !important;">close</md-icon>
+     </md-button>
+    </div>
+   </md-toolbar>
+   <md-content layout-padding="" class="padding-0">
+     <div class="padding-0" layout-align="end center" layout-fill id="sideMenu" ng-include="'../app/scripts/menu/views/side-menu.html'" adjust-height></div>
+  	</md-content>
+  </md-sidenav>
+</div>
+<div ng-include="'../app/scripts/landing/views/footer.html'"></div>

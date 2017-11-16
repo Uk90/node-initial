@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Feazo</title>
+        <link rel="shortcut icon" href="/assets/images/favicon_fe.png"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- inject:css -->
+        <link rel="stylesheet" href="/assets/css/master.css">
+        <!-- endinject -->
+    </head>
+    <body class="main-body">
+        <ui-view></ui-view>
+        <!-- <div layout="row" layout-fill hide show-xl class="main-xl-padding">
+          <div flex layout-fill class="container-cushion-xl"></div>
+        </div> -->
+        <md-progress-circular ng-show="isLoading" md-diameter="60" class="loader md-accent md-hue-4" md-mode="indeterminate"></md-progress-circular>
+        <!-- inject:js -->
+        <script src="/js/bower.js"></script>
+        <script src="/js/application.js"></script>
+        <script src="/js/templates.js"></script>
+        <!-- endinject -->
+        <script type="text/javascript" src="https://wi361.infusionsoft.com/app/webTracking/getTrackingCode"></script>
+    </body>
+</html>
